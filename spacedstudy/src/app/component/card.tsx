@@ -3,7 +3,7 @@ import ArrowIcon from "./uparrow";
 import { useState } from "react";
 import SubCard from "./subcard";
 
-export default function Card(props:{name:string}){
+export default function Card(props:{name:string, id:string}){
     const [open, setOpen] = useState(false);
     return (
         <div className="border rounded-md p-4 w-full mb-4">

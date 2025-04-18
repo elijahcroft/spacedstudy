@@ -35,6 +35,7 @@ export default function YourStudies(){
         console.log("added study")
         
     }
+    
 
     return(
         <div className="flex flex-col w-full mt-20">
@@ -44,7 +45,7 @@ export default function YourStudies(){
         </div>
         <div className="grid grid-cols-2 gap-x-5 mt-5 px-10 items-start">
             {studies.map((study) => (
-                <Card key={study.id} name={study.name}/>
+                <Card key={study.id} id={study.id}name={study.name}/>
             ))}
            
             
