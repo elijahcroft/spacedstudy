@@ -3,7 +3,7 @@ type Props = {
     className?: string;
   };
   
-  export default function ArrowIcon({ direction = 'up', className = 'w-12 h-6' }: Props) {
+  export default function ArrowIcon({ direction = 'up', className = 'w-10 h-10' }: Props) {
     const rotation = direction === 'down' ? 'rotate-180' : '';
     return (
       <svg
