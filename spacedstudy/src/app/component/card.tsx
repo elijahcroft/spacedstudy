@@ -6,7 +6,7 @@ import SubCard from "./subcard";
 export default function Card(props:{name:string, id:string}){
     const [open, setOpen] = useState(false);
     return (
-        <div className="border rounded-md p-4 w-full mb-4">
+        <div className="border rounded-lg p-4 w-full mb-4">
           
           <div>
 
@@ -25,6 +25,7 @@ export default function Card(props:{name:string, id:string}){
             <div className="mt-4 text-sm">
 
               <SubCard/>
+              
             </div>
           )}
           </div>

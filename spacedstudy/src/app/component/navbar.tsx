@@ -1,6 +1,6 @@
 
 
-export default function Navbar(props:{name:string }){
+export default function Navbar(){
     return(
 
     

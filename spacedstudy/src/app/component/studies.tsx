@@ -15,7 +15,7 @@ export default function YourStudies(){
     const[studies, setStudies] = useState<Study[]>([]);
     useEffect(() =>{
         async function loadStudies(){
-            const { data, error } = await supabase.from("studies").select("*")
+            const { data, error } = await supabase.from("studies").select()
             if(error){
                 console.error(error)
             }else{
@@ -35,13 +35,21 @@ export default function YourStudies(){
         console.log("added study")
         
     }
+    async function removeStudy(id:string){
+        await supabase.from("studies").delete().eq("id",id);
+        setStudies((prev) =>prev.filter((s) => s.id !==id))
+    }
     
 
     return(
-        <div className="flex flex-col w-full mt-20">
-             <div className="flex">
+        <div className="flex flex-col w-full mt-20  mh-20 ">
+            <div className="h-full max-h-80">
+
+            
+             <div className="flex justify-start ">
             <h1 className="text-3xl font-mono">Your Studies</h1>
-            <button onClick={() => addStudy("test")} className="bg-gray-900 hover:bg-sky-700 rounded-lg px-6 py-2 me-4"> ADD</button>
+            <button onClick={() => addStudy("test")} className="bg-gray-900 hover:bg-sky-700 rounded-lg px-6 py-2 me-4 ml-4"> ADD</button>
+            <button onClick={() => removeStudy("test")} className="bg-gray-900 hover:bg-sky-700 rounded-lg px-6 py-2 me-4 ml-4"> REMOVE</button>
         </div>
         <div className="grid grid-cols-2 gap-x-5 mt-5 px-10 items-start">
             {studies.map((study) => (
@@ -50,7 +58,7 @@ export default function YourStudies(){
            
             
         </div>
-
+        </div>
         </div>
        
     );

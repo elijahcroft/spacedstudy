@@ -6,7 +6,7 @@
     export default function Home(){
         return(
         <div className="min-h-screen px-30">
-        <Navbar name="elijah"/>
+        <Navbar />
         <hr className="border-t border-gray-300 my-4 -mx-20" />
         <div className="flex flex-col  p-4 rounded-md">
         <Greet name="elijah" />
