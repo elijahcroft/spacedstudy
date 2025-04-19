@@ -10,7 +10,7 @@ export default function DailyReview(){
             
             
         </div>
-        <div className="flex w-full px-10 mt-2" >
+        <div className="flex w-full px-10 mt-8" >
         <Card name="temp" id='temp'/>    
         </div>
         

@@ -48,10 +48,14 @@ export default function YourStudies(){
             
              <div className="flex justify-start ">
             <h1 className="text-3xl font-mono">Your Studies</h1>
+            
             <button onClick={() => addStudy("test")} className="bg-gray-900 hover:bg-sky-700 rounded-lg px-6 py-2 me-4 ml-4"> ADD</button>
-            <button onClick={() => removeStudy("test")} className="bg-gray-900 hover:bg-sky-700 rounded-lg px-6 py-2 me-4 ml-4"> REMOVE</button>
+           
         </div>
-        <div className="grid grid-cols-2 gap-x-5 mt-5 px-10 items-start">
+        
+        
+
+        <div className="grid grid-cols-2 gap-x-5 mt-8 px-10 items-start overflow-auto ">
             {studies.map((study) => (
                 <Card key={study.id} id={study.id}name={study.name}/>
             ))}
@@ -59,7 +63,9 @@ export default function YourStudies(){
             
         </div>
         </div>
+        
         </div>
+        
        
     );
 
