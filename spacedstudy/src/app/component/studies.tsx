@@ -6,7 +6,7 @@ import { useState, useEffect} from "react"
 import { supabase } from "../../../lib/supabase";
 
 type Study = {
-    id: string
+    id: number
     name: string
 }
 
@@ -35,7 +35,7 @@ export default function YourStudies(){
         console.log("added study")
         
     }
-    async function removeStudy(id:string){
+    async function removeStudy(id:number){
         await supabase.from("studies").delete().eq("id",id);
         setStudies((prev) =>prev.filter((s) => s.id !==id))
     }

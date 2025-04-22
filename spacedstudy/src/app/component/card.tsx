@@ -1,10 +1,25 @@
 "use client";
+
 import ArrowIcon from "./uparrow";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SubCard from "./subcard";
-import ProgressBar from "./progressbar";
-export default function Card(props:{name:string, id:string}){
+
+import SubTopicNames from "./get_sub_names";
+
+
+
+
+
+export default function Card(props:{id:number, name:string}){
     const [open, setOpen] = useState(false);
+    const [AiSubTopic, SetAiSubTopic] = useState<string[]>([])
+
+    
+    
+
+
+
+
     return (
         <div className="border rounded-lg p-4 w-full mb-4 shadow-3xl">
           
@@ -25,9 +40,9 @@ export default function Card(props:{name:string, id:string}){
           {open && (
             <div className="mt-4 text-sm">
 
-              <SubCard/>
-              <SubCard/>
-              <SubCard/>
+          
+              <SubTopicNames parentId={props.id}/>
+            
               
             </div>
           )}

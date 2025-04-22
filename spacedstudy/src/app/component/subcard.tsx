@@ -1,11 +1,15 @@
+
 import ProgressBar from "./progressbar"
 import removeStudy from "./studies"
-export default function SubCard(){
+export default function SubCard(props:{name:string}){
+
+
+
     return(
 
         <div className="border rounded-md p-1 w-full mb-4 animtate-bounce">
             <div className="flex justify-between items-center text-lg h-20">
-            <div className="font-mono text-2xl px-5">Sub-Subject</div>
+            <div className="font-mono text-2xl px-5">{props.name}</div>
             <button className="rounded-md border bg-neutral-950 hover:bg-neutral-900  font-mono px-5 py-3 -mb-12 me-3">Start Review</button>
             
         </div>
